@@ -1,6 +1,11 @@
 apps:
-  - script   : 'postpromoter.js'
-    name     : 'POSTPROMOTER'
-    exec_mode: 'cluster'
+  - script   : 'src/app.js'
+    name     : 'POSTPROMOTER APP'
     instances: 2
-  - script   : 'worker.js'
+    exec_mode: 'cluster'
+  - script : 'src/worker.js'
+    watch  : true
+    env    :
+      NODE_ENV: 'development'
+    env_production:
+      NODE_ENV: 'production'

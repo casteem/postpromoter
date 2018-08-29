@@ -1,11 +1,12 @@
 
-FROM keymetrics/pm2:8
+FROM keymetrics/pm2:8-alpine
+
+RUN apk add --no-cache git nano
+
+WORKDIR /var/app
 
 COPY package.json package.json.lock /var/app/
 COPY pm2.json /var/app/
-
-
-# RUN apk add --no-cache git nano
 
 ENV NPM_CONFIG_LOGLEVEL warn
 RUN npm config set unsafe-perm true

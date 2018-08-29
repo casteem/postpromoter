@@ -1,0 +1,6 @@
+apps:
+  - script   : 'postpromoter.js'
+    name     : 'POSTPROMOTER'
+    exec_mode: 'cluster'
+    instances: 2
+  - script   : 'worker.js'
